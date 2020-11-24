@@ -1,0 +1,1 @@
+call gdallocationinfo.exe -wgs84 %1 %2 %3
