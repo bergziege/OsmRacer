@@ -17,3 +17,10 @@ Bis hier soll es auf jeden Fall noch ein OSM Format bleiben, um die Datei mit g�
 * Wahrscheinlich überführen der OSM Daten in eine lokale DB
 * Daten aus der DB abrufen und in Unity darstellen.
     * Schwerpunkt hierbei: nur die Daten in einem bestimmten Umkreis abrufen (wenn das denn geht ;-)
+
+* Auslesen Smart Trainer über Ant+ FE-C und Darstellung auf Strecke
+* Grundlegende Navigation beim Fahren
+* Ansteuern des Trainers mit Steigungsdaten
+    * evtl. schon Grundlegende Glättung/Interpolation der Daten
+
+* In-game Editor für Höhendaten
