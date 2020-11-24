@@ -17,6 +17,7 @@ Bis hier soll es auf jeden Fall noch ein OSM Format bleiben, um die Datei mit g�
 * Wahrscheinlich überführen der OSM Daten in eine lokale DB
 * Daten aus der DB abrufen und in Unity darstellen.
     * Schwerpunkt hierbei: nur die Daten in einem bestimmten Umkreis abrufen (wenn das denn geht ;-)
+    * Zusätzliche Stützpunkte in die Straßen einfügen um Höhenänderungen bei z.B. langen, graden Strecken anzeigen zu können.
 
 * Auslesen Smart Trainer über Ant+ FE-C und Darstellung auf Strecke
 * Grundlegende Navigation beim Fahren
