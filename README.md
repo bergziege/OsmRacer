@@ -5,13 +5,16 @@ Mein erstes Unity Projekt. Eine Kleine Anwendung für den Smart Trainer um auf e
 
 * Abrufen von Höhendaten aus dem LiDAR Geländemodell mittels gdallocationinfo.
     * Setzt vorraus, das "gdallocationinfo" über die Kommandozeile erreichbar ist.
-
-## Nächste Ziele
-
 * entschlacken einer OSM Datei
     * Alles außer Straßen und deren Nodes entfernen (z.B. Gebäude, Gewässer, Wanderwege, ...).
     * Basis für die erste Version wird Sachsen. Da kann ich gute die Realität mit der Theorie vergleichen und es gibt 20m LiDAR Daten.
     * Als Tools fürs Filtern soll "osmfilter" zum Einsatz kommen. Die entsprechenden Parameter werden hier veröffentlicht.
+    
+Leider sind die OSM Daten nicht unbedingt einheitlich, so das es mit den aktuellen osmfilter Parametern zu fehlenden Straßen/Wegen kommen kann. Dies sind vor Allem Radwege wie z.B. Teile des Elberadwegs, die manchmal als "Cyclepath" und manchmal als "Path" mit einzelner Rad/Fußgänger Zuweisung versehen sind. Aber auch Straßen wie z.B. die Wiener Str. in Dresden wird in großen Teilen als "unclassified" und nicht wie auf einem anderen Stück als "tertiary" betitelt.
+Für einen ersten Versuch soll es jedoch reichen. Ein neues Streckennetz einzulesen muss sowieso ein Kernfeature der Anwendung werden um die Datenbasis gut pflegen zu können.
+
+## Nächste Ziele
+
 * anreichern aller Nodes in der OSM Datei um das "ele" Tag mit Höhenwert aus dem Geländemodell
     * Dies wird druch ein kleines Kommandozeilentool geschehen
 
