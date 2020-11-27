@@ -1,0 +1,6 @@
+--keep=
+highway=*ary
+highway=residential
+highway=pedestrian and bicycle=yes
+highway=cycleway
+highway=service
