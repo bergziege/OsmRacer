@@ -15,21 +15,27 @@ Für einen ersten Versuch soll es jedoch reichen. Ein neues Streckennetz einzule
 
 ## Nächste Ziele
 
-* anreichern aller Nodes in der OSM Datei um das "ele" Tag mit Höhenwert aus dem Geländemodell
-    * Dies wird druch ein kleines Kommandozeilentool geschehen
+* Aufbereiten der OSM Daten und überführen in eine SQLite/spatialite DB
+    * Alle "Way" Elemente durchlaufen und zusätzlich zu den OSM "Node"s mindestens alle 20m einen weiteren Stützpunkt hinzufügen
+    * Alle Nodes mit einer Höhe versehen
+    * Wege und Knotenpunkte in der DB ablegen
+        * Um die Daten später besser verarbeiten zu können, werden die "Wege" in einzelne Segmente zwischen jeweils 2 Stützpunkte zerlegt.
 
-Bis hier soll es auf jeden Fall noch ein OSM Format bleiben, um die Datei mit gängigen OSM Editoren öffnen zu können
+* Bis hierher sind alles noch vorbereitende Schritte. Nachfolgendes findet dann im "Spiel" statt.
 
-* Wahrscheinlich überführen der OSM Daten in eine lokale DB. 
-    * Schwerpunkt hier: in-file DB. Als Nutzer der fertigen Anwendung möchte ich mir nicht erst eine DB Software auf dem Rechner installieren müsssen.
-    * Alternativ ein eigenes, binäres Format. Bei diesem Punkt bin ich mir absolut noch unklar was es werden wird.
 * Daten aus der DB abrufen und in Unity darstellen.
-    * Schwerpunkt hierbei: nur die Daten in einem bestimmten Umkreis abrufen (wenn das denn geht ;-)
-    * Zusätzliche Stützpunkte in die Straßen einfügen um Höhenänderungen bei z.B. langen, graden Strecken anzeigen zu können.
+    * Alle Knoten in einem bestimmten Umkreis abrufen
+    * Alle Segmente, die die Knoten als Start- oder Endpunkt haben abrufen und die Knoten somit verbinden
 
 * Auslesen Smart Trainer über Ant+ FE-C und Darstellung auf Strecke
 * Grundlegende Navigation beim Fahren
 * Ansteuern des Trainers mit Steigungsdaten
-    * evtl. schon Grundlegende Glättung/Interpolation der Daten
+    * evtl. schon Grundlegende Glättung der ausgesteuerten Steigungsdaten
+        * Die an den Trainer gesendeten Steigungsdaten müssen somit nicht mehr 100% mit der visuellen Repräsentation des Weges übereinstimmen, was bei 20m Segmenten aber vertretbar sein sollte.
 
 * In-game Editor für Höhendaten
+    * Werden als Korrekturwerte zu Node IDs abgelegt bzw. als Offset zwischen 2 Node IDs, wenn es sich um Korrekturwerte für errechnete Stützpukte handelt
+        * NodeID: 356m <- Korrekturwert für einen OSM Node
+        * NodeID->NodeID + 2: 340m <- Korrekturwert für den 2. Stützpunkt zwischen 2 OSM Nodes
+     * Korrekturwerte bleiben gültig, bis z.B. der Abstand der errechneten, zusätzlichen Stützpunkte geändert wird.
+     * Korrekturwerte werden in einer separaten DB vorgehalten um diese nicht zu löschen, wenn das eigentliche Wegenetz aktualisiert wird.
