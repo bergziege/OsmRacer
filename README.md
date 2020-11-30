@@ -19,13 +19,17 @@ Für einen ersten Versuch soll es jedoch reichen. Ein neues Streckennetz einzule
     * Alle "Way" Elemente durchlaufen und zusätzlich zu den OSM "Node"s mindestens alle 20m einen weiteren Stützpunkt hinzufügen
     * Alle Nodes mit einer Höhe versehen
     * Wege und Knotenpunkte in der DB ablegen
-        * Um die Daten später besser verarbeiten zu können, werden die "Wege" in einzelne Segmente zwischen jeweils 2 Stützpunkte zerlegt.
+        * Um die Daten später besser verarbeiten zu können, werden die "Wege" in einzelne Segmente zwischen jeweils 2 Stützpunkte abgelegt.
+    * Bin mir noch unklar darüber, ob die Kordinaten in Lat/Lon + Höhe oder in lokalen Koordinaten für Unity ebgelegt werden.
+        * Vorteil Lat/Lon: Umkreissuche in der DB <- aktuell bevorzugt
+        * Vorteil lokal: Keine Umrechnung im Spiel nötig
 
 * Bis hierher sind alles noch vorbereitende Schritte. Nachfolgendes findet dann im "Spiel" statt.
 
 * Daten aus der DB abrufen und in Unity darstellen.
     * Alle Knoten in einem bestimmten Umkreis abrufen
     * Alle Segmente, die die Knoten als Start- oder Endpunkt haben abrufen und die Knoten somit verbinden
+    * Umrechnen in lokales Unity Koordinatensystem mit sphärischem Modell
 
 * Auslesen Smart Trainer über Ant+ FE-C und Darstellung auf Strecke
 * Grundlegende Navigation beim Fahren
